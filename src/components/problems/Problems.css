@@ -1,0 +1,141 @@
+.problems {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.problems-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: var(--dark-color);
+}
+
+.problem-description {
+  font-size: 18px;
+  color: var(--secondary-color);
+  max-width: 750px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+.problem-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* viewport wraps the draggable track */
+.problems-viewport {
+  position: relative;
+  overflow: hidden;         /* hide overflow, we drag inside */
+  touch-action: pan-y;      /* allow vertical scroll on touch; drag handles X */
+  -webkit-user-select: none;
+  user-select: none;
+  padding-bottom: 8px;
+}
+
+/* draggable track */
+.problems-drag {
+  display: flex;
+  gap: 20px;
+  padding: 4px 6px 12px;
+  cursor: grab;
+}
+
+.problems-drag:active { cursor: grabbing; }
+
+/* individual cards */
+.problem-card {
+  min-width: clamp(240px, 32vw, 320px);
+  max-width: 90vw;
+  min-height: 220px;
+  border-radius: 12px;
+  padding: 20px;
+  background: var(--tertiary-color, #fff);
+  text-align: left;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  /* box-shadow: rgba(149, 157, 165, 0.12) 0px 4px 16px; */
+}
+
+.problem-card:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transform: translateY(-2px);
+}
+
+.problem-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--dark-color);
+}
+
+.problem-card p {
+  font-size: 16px;
+  color: var(--secondary-color);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* optional nav arrows */
+.problems-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(0,0,0,0.06);
+  backdrop-filter: blur(6px);
+  font-size: 22px;
+  line-height: 36px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease;
+}
+
+.problems-arrow:hover { background: rgba(0,0,0,0.12); }
+.problems-arrow.left { left: 6px; }
+.problems-arrow.right { right: 6px; }
+
+@media (max-width: 767px) {
+  .problems { padding: 40px 20px; }
+
+  .problems-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .problem-description {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .problem-card h3 { font-size: 20px; }
+  .problem-card p { font-size: 14px; }
+
+  .problems-arrow { display: none; } /* keep mobile clean; drag/swipe is enough */
+}
+
+
+.drag-indicator {
+  position: absolute;
+  /* bottom: 8px; */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: var(--secondary-color);
+  opacity: 0.7;
+  pointer-events: none;
+  animation: fadePulse 2s infinite;
+}
+
+@keyframes fadePulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}

@@ -1,0 +1,110 @@
+.brands {
+    padding: 100px 0;
+}
+
+.brands-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--dark-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.brands-description {
+    font-size: 18px;
+    color: var(--secondary-color);
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.brands-viewport {
+    margin-top: 40px;
+    --gap: 120px;
+    --speed: 30s;
+    /* adjust for faster/slower marquee */
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #7e7e7e 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #7e7e7e 10%, #000 90%, transparent);
+}
+
+
+/* Pause on hover */
+.brands-viewport:hover .brands-track {
+    animation-play-state: paused;
+}
+
+.brands-track {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    width: max-content;
+    /* shrink to content so animation works cleanly */
+    animation: scroll-left var(--speed) linear infinite;
+    will-change: transform;
+}
+
+.brand {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: saturate(0) contrast(1.1) opacity(.9);
+    /* subtle mono look */
+}
+
+/* Keyframes: move full width of first half (we duplicate the list) */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+    /* because content is duplicated */
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .brands-track {
+        animation: none;
+        transform: none;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .brand {
+        background: #121212;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, .4);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .brands {
+        padding: 100px 20px;
+    }
+
+    .brands-viewport{
+        --gap: 80px;
+        --speed: 40s;
+    }
+
+    .brands-title {
+        font-size: 28px;
+        /* margin-bottom: 30px; */
+    }
+
+    .brands-description {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+}

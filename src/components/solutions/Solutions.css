@@ -1,0 +1,387 @@
+.solutions {
+    padding: 100px 20px;
+}
+
+.solution-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.solutions-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.solutions-link {
+    text-decoration: none;
+    color: inherit;
+    color: var(--primary-color);
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.solutions-description {
+    font-size: 18px;
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+.solutions-cta-button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 14px 24px;
+    border-radius: 50px;
+    height: fit-content;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.solutions-grid {
+    display: grid;
+    padding: 10px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    background: linear-gradient(to bottom,
+            transparent 12.5%,
+            /* top transparent */
+            var(--light-color) 12.5%,
+            /* start color */
+            var(--light-color) 87.5%,
+            /* end color */
+            transparent 87.5%
+            /* bottom transparent */
+        );
+}
+
+.solution-card {
+    /* background-color: var(--light-color); */
+    display: inline-block;
+    /* required so cards respect column flow */
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
+    /* prevents cards from being split */
+    padding: 20px;
+    border-radius: 20px;
+    text-align: left;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+.solution-card:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: all 0.3s ease;
+}
+
+.solution-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--dark-color);
+}
+
+.solution-card p {
+    font-size: 16px;
+    color: var(--secondary-color);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.solution-link {
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    color: var(--primary-color);
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.solution-link:hover {
+    color: var(--dark-color);
+}
+
+@media screen and (max-width: 767px) {
+    .solutions {
+        padding: 40px 20px;
+    }
+
+    .solutions-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .solutions-description {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .solution-card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .solution-card p {
+        font-size: 14px;
+    }
+
+    .solution-grid {
+        padding: 0;
+    }
+
+    .solutions-cta-button {
+        width: fit-content;
+        text-align: center;
+        margin-bottom: 10px;
+        padding: 12px 24px;
+    }
+}
+
+/* Toggle pills */
+.solutions-toggle {
+    display: inline-flex;
+    gap: 8px;
+    padding: 6px;
+    background: #fdeddf;
+    border-radius: 999px;
+    margin: 0 0 20px;
+}
+
+.toggle-pill {
+    border: 0;
+    background: transparent;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .15s ease, background .2s ease;
+}
+
+.toggle-pill:hover {
+    transform: translateY(-1px);
+}
+
+.toggle-pill.active {
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+    color: var(--primary-color, #FF630F);
+}
+
+
+/* --- Layout container --- */
+.category-orbit {
+    position: relative;
+    width: 340px;
+    /* tweak to fit your design */
+    height: 340px;
+    overflow: hidden;
+    margin: 0 auto 24px;
+}
+
+/* Center image */
+.center-image {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+    transition: transform .4s ease;
+}
+
+/* Optional: a subtle pulse when changing selection */
+.category-orbit:hover .center-image {
+    transform: scale(1.02);
+}
+
+/* Orbit ring wrapper rotates; children are positioned by --deg */
+/* Orbit ring wrapper rotates; children are positioned by --deg */
+.orbit {
+    --angle: 0deg;
+    position: absolute;
+    inset: 0;
+    transform: rotate(var(--angle));
+    transition: transform 1s cubic-bezier(.22, .7, .28, 1);
+}
+
+/* Add a circular ring border */
+.orbit::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 260px;
+    /* slightly bigger than center image */
+    height: 260px;
+    border-radius: 50%;
+    border: 2px dashed #d1d5db;
+    /* or solid, adjust color */
+    pointer-events: none;
+    /* ring doesn't block clicks */
+    z-index: 0;
+    /* stays behind orbit items */
+}
+
+/* When Consulting selected: rotate 180 to bring it to top */
+.orbit.rot-180 {
+    --angle: 180deg;
+}
+
+/* Each orbit item sits on the ring using polar transform */
+.orbit-item {
+    --radius: 125px;
+    /* distance from center */
+    position: absolute;
+    left: 145px;
+    top: 145px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    transform:
+        rotate(var(--deg)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--deg)))
+        /* keep label upright */
+        rotate(calc(-1 * var(--angle)));
+    /* counter-rotate against ring */
+    transition: transform 1s cubic-bezier(.22, .7, .28, 1), z-index .2s;
+}
+
+/* Label pill with icon */
+.service-category-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    /* adjust size */
+    height: 40px;
+    background: var(--gradient);
+    /* your purple color */
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    /* small rounding on corners */
+    transform: rotate(45deg);
+    /* rotate square to diamond */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: background 1s ease, transform 1s ease, box-shadow 1s ease;
+}
+
+/* Keep the icon/text upright */
+.service-category-label .label-icon,
+.service-category-label .label-text {
+    transform: rotate(-45deg);
+    display: inline-block;
+}
+
+/* Hover */
+.service-category-label:hover {
+    background: var(--gradient);
+    /* lighter purple hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: rotate(45deg) scale(1.05);
+}
+
+/* Active/Selected */
+.orbit-item.active .service-category-label {
+    background: var(--primary-color);
+    transform: rotate(45deg) scale(1.1);
+}
+
+.label-icon {
+    font-size: 24px;
+}
+
+/* Hover affordance */
+.orbit-item:hover .service-category-label {
+    transform: rotate(45deg) translateY(-2px);
+}
+
+/* Active (selected) style + bring to front */
+.orbit-item.active {
+    z-index: 2;
+    transform: scale(1.02) rotate(var(45deg)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--deg))) rotate(calc(-1 * var(--angle)));
+}
+
+.orbit-item.active .service-category-label {
+    background: var(--primary-color, #FF630F);
+    color: #fff;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .18);
+    transform: rotate(45deg) translateY(-4px) scale(1.05);
+}
+
+
+
+@media screen and (max-width: 767px) {
+    .solutions-grid {
+        columns: 1;
+        padding: 0;
+    }
+
+    .category-orbit {
+        margin: 0 auto 20px;
+        width: 260px;
+        height: 260px;
+    }
+
+    .center-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .orbit::before {
+        width: 200px;
+        height: 200px;
+    }
+
+    .orbit-item {
+        --radius: 95px;
+        left: 110px;
+        top: 110px;
+    }
+
+    .service-category-label {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    .label-icon {
+        font-size: 20px;
+    }
+
+    .solutions-toggle {
+        display: flex;
+        width: fit-content;
+        margin: 0 auto 20px;
+        justify-content: center;
+        padding: 4px;
+    }
+
+    .toggle-pill {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+}
