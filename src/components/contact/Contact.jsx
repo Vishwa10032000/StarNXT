@@ -21,7 +21,8 @@ const itemVariants = {
 
 const Contact = () => {
   return (
-    <motion.div
+    <motion.section
+      id="contact"
       className="contact"
       initial="hidden"
       whileInView="visible"
@@ -101,7 +102,7 @@ const Contact = () => {
           </div>
         </motion.div>
       </div>
-    </motion.div>
+    </motion.section>
   )
 }
 
