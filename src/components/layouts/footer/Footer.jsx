@@ -46,7 +46,7 @@ const Footer = () => {
 
         <div className="col-lg-2 col-md-6 col-6 mb-3">
           <motion.nav
-            className="footer-link"
+            className=""
             aria-label="Footer navigation"
             variants={itemUp}
           >
@@ -65,7 +65,7 @@ const Footer = () => {
 
         <div className="col-lg-2 col-md-6 col-6 mb-3">
           <motion.nav
-            className="footer-link"
+            className=""
             aria-label="Social media links"
             variants={itemUp}
           >
@@ -76,7 +76,7 @@ const Footer = () => {
             <div className="d-flex flex-wrap flex-column">
               <a
                 className="footer-link"
-                href="https://www.linkedin.com/company/starnxt"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -84,7 +84,7 @@ const Footer = () => {
               </a>
               <a
                 className="footer-link"
-                href="https://twitter.com/StarNXT1"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -92,7 +92,7 @@ const Footer = () => {
               </a>
               <a
                 className="footer-link"
-                href="https://www.facebook.com/StarNXT-104632308835707"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -100,7 +100,7 @@ const Footer = () => {
               </a>
               <a
                 className="footer-link"
-                href="https://www.instagram.com/starnxt1/"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -120,19 +120,19 @@ const Footer = () => {
             <motion.address className="footer-address" variants={itemUp}>
               <p>
                 <FaMapMarkerAlt className="contact-icon" />
-                123 StarNXT Lane,<br />
-                Tech City, TX 75001<br />
-                United States
+                Covai Tech Park, #104, 1st floor, 4th tower, 86/87 plot no,<br />
+                4th south cross street, Kovai Thiru Nagar, Nehru Nagar East<br />
+                Coimbatore, Tamil Nadu, India - 641014
               </p>
 
               <p>
                 <FaPhoneAlt className="contact-icon" />
-                <a className="footer-link" href="tel:+1234567890">+1 (234) 567-890</a>
+                <a className="footer-link" href="tel:+1234567890">+91 9626264112</a>
               </p>
 
               <p>
                 <FaEnvelope className="contact-icon" />
-                <a className="footer-link" href="mailto:QHf2o@example.com">contact@starnxt.co</a>
+                <a className="footer-link" href="mailto:contact@t-nxt.com">contact@t-nxt.com</a>
               </p>
             </motion.address>
 

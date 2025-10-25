@@ -5,7 +5,7 @@
 .about-title{
     font-size: 36px;
     font-weight: 600;
-    color: var(--dark-color);
+    color: var(--primary-color);
     margin-bottom: 20px;
     text-align: center;
     margin: 0px;
@@ -23,7 +23,7 @@
 .about-section-title{
     font-size: 28px;
     font-weight: 600;
-    color: var(--dark-color);
+    color: var(--accent-color);
     margin-bottom: 15px;
 }
 
@@ -55,7 +55,7 @@
 .about-subtitle{
     font-size: 24px;
     font-weight: 600;
-    color: var(--dark-color);
+    color: var(--accent-color);
     margin-bottom: 15px;
 }
 

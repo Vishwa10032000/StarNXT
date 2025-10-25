@@ -15,6 +15,16 @@ const testimonials = [
   { name: "Olivia Martinez", role: "COO, SyncPulse", img: "https://randomuser.me/api/portraits/women/8.jpg", text: "StarNXT’s attention to detail and modern IT practices helped us scale fast without breaking things." },
 ];
 
+// pastel gradients
+const pastelGradients = [
+  "linear-gradient(135deg, #fbc2eb, #a6c1ee)",   // pink → lavender
+  "linear-gradient(135deg, #ffd6a5, #cdb4db)",   // peach → lilac
+  "linear-gradient(135deg, #b8f2e6, #ffccd5)",   // mint → pink
+  "linear-gradient(135deg, #a0c4ff, #ffc6ff)",   // sky blue → blush
+  "linear-gradient(135deg, #fdcfe8, #ffe29f, #ffa99f)", // sunset pastel
+];
+
+
 const AUTOPLAY_MS = 10000;
 const GAP_FALLBACK = 20;
 
@@ -155,29 +165,31 @@ const Testimonial = () => {
           onMouseLeave={() => setHovered(false)}
         >
           {testimonials.map((t, i) => (
-            <motion.div
-              className="testimonial-card"
-              key={i}
-              custom={i}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.35 }}
-              transition={{ type: 'spring', stiffness: 280, damping: 24 }}
-            >
-              <div>
-                <h3>Outstanding IT Solutions and Service</h3>
-                <p className="testimonial-text">"{t.text}"</p>
-              </div>
-              <div className="testimonial-client">
-                <img src={t.img} alt={`Photo of ${t.name}`} className="testimonial-client-image" />
-                <div className="testimonial-client-info">
-                  <p className="testimonial-client-name">{t.name}</p>
-                  <p className="testimonial-client-role">{t.role}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+  <motion.div
+    className="testimonial-card"
+    key={i}
+    style={{ background: pastelGradients[i % pastelGradients.length] }}
+    custom={i}
+    variants={cardVariants}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.35 }}
+    transition={{ type: 'spring', stiffness: 280, damping: 24 }}
+  >
+    <div>
+      <h3>Outstanding IT Solutions and Service</h3>
+      <p className="testimonial-text">"{t.text}"</p>
+    </div>
+    <div className="testimonial-client">
+      <img src={t.img} alt={`Photo of ${t.name}`} className="testimonial-client-image" />
+      <div className="testimonial-client-info">
+        <p className="testimonial-client-name">{t.name}</p>
+        <p className="testimonial-client-role">{t.role}</p>
+      </div>
+    </div>
+  </motion.div>
+))}
+
         </div>
       </motion.div>
     </div>

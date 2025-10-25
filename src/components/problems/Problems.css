@@ -7,7 +7,7 @@
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 40px;
-  color: var(--dark-color);
+  color: var(--primary-color);
 }
 
 .problem-description {
@@ -70,7 +70,7 @@
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 12px;
-  color: var(--dark-color);
+  color: var(--accent-color);
 }
 
 .problem-card p {

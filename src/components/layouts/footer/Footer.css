@@ -20,7 +20,7 @@
 .footer-title {
   font-weight: 600;
   font-size: 20px; /* 8% of viewport width */
-  color: var(--primary-color);
+  color: var(--accent-color);
   margin-bottom: 10px;
 }
 

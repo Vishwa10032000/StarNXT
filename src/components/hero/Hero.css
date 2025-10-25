@@ -34,7 +34,7 @@
 .hero-title{
     font-size: 16px;
     font-weight: 500;
-    color: var(--primary-color);
+    color: var(--accent-color);
     border-radius: 8px;
     margin: 0;
 }
@@ -42,7 +42,7 @@
 .hero-subtitle{
     font-size: 38px;
     font-weight: 600;
-    color: var(--dark-color);
+    color: var(--primary-color);
     margin: 20px 0;
 }
 
@@ -58,10 +58,10 @@
 .hero-cta-button{
     background-color: var(--primary-color);
     color: var(--light-color);
+    border: 2px solid var(--primary-color);
     text-decoration: none;
     padding: 12px 24px;
     border-radius: 8px;
-    border: none;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;

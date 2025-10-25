@@ -16,7 +16,7 @@
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: var(--dark-color);
+    color: var(--primary-color);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -25,7 +25,7 @@
 .solutions-link {
     text-decoration: none;
     color: inherit;
-    color: var(--primary-color);
+    color: var(--accent-color);
     transition: color 0.3s;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@
 }
 
 .solutions-cta-button {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--light-color);
     padding: 14px 24px;
     border-radius: 50px;
@@ -94,7 +94,7 @@
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 12px;
-    color: var(--dark-color);
+    color: var(--accent-color);
 }
 
 .solution-card p {
@@ -109,7 +109,7 @@
     display: inline-block;
     text-decoration: none;
     color: inherit;
-    color: var(--primary-color);
+    color: var(--accent-color);
     transition: color 0.3s;
     display: flex;
     align-items: center;
